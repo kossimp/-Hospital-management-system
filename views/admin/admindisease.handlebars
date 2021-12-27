@@ -1,0 +1,48 @@
+<link rel="stylesheet" type="text/css" href="/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="/css/jquery.dataTables.min.css">
+
+
+    <!-- Diseases manager -->
+    <div class="col-md-4 col-lg-4" style="padding-right: 30px; padding-left: 30px;">
+         <div class="row">
+            <!-- Add new disease -->
+            <h4 style="margin-top: 0px;">系统中添加一种疾病</h4>
+            <form action="/app/admin/adddisease" method="post">
+                <div class="form-group row">
+                    <label class="col-sm-5 col-md-5 col-lg-5 col-form-label">疾 病 名</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <input class="form-control" style="width: 100%;" type="text" name="diseaseName" required="true" placeholder="请输入疾病名...">
+                    </div>
+                </div>
+
+                <!-- Last name input -->
+                <div class="form-group row">
+                    <label class="col-sm-5 col-md-5 col-lg-5 col-form-label">危险程度</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <input class="form-control" style="width: 100%;" type="number" name="diseaseScore" required="true" placeholder="请输入疾病危险程度...">
+                    </div>
+                </div>
+
+            	<input class="btn btn-success" style="float: right;" type="Submit" name="Submit" value="添加疾病">
+            </form>
+        </div>
+
+        <hr style="border-top: dotted 1px;" />
+
+        <div class="row">
+        <!-- Delete diseases -->
+            <h4 style="margin-top: 0px;">系统中删除一种疾病</h4>
+            <form action="/app/admin/deletediseases" method="post">
+                <table id="diseases-table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <!-- JavaScript works here! -->
+                </table>
+
+                <input class="btn btn-danger" style="float: right;" type="Submit" name="Submit" value="删除疾病">
+            </form>
+        </div>
+    </div>
+
+
+<script type="text/javascript" src="/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="/scripts/systemSettings.js"></script>
